@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.edwardy.dao.DoubleColorDao">
+
+    <select id="getAll" resultType="com.edwardy.po.DoubleColor">
+        select * from Double_Color
+    </select>
+    <resultMap id="DoubleColor" type="com.edwardy.po.DoubleColor">
+        <id property="Id" column="Id" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="A" column="A" javaType="Integer" jdbcType="INTEGER" />
+        <result property="B" column="B" javaType="Integer" jdbcType="INTEGER"  />
+        <result property="C" column="C" javaType="Integer" jdbcType="INTEGER" />
+        <result property="D" column="D" javaType="Integer" jdbcType="INTEGER"  />
+        <result property="E" column="E" javaType="Integer" jdbcType="INTEGER" />
+        <result property="F" column="F" javaType="Integer" jdbcType="INTEGER" />
+        <result property="G" column="G" javaType="Integer" jdbcType="INTEGER" />
+        <result property="CreateTime" column="CreateTime" javaType="java.util.Date" jdbcType="DATE" />
+        <result property="Periods" column="Periods" javaType="String" jdbcType="VARCHAR" />
+        <result property="OpenTime" column="OpenTime" javaType="java.util.Date" jdbcType="DATE" />
+    </resultMap>
+</mapper>

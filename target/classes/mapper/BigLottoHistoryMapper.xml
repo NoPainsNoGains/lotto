@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.edwardy.dao.BigLottoHistoryDao">
+
+    <select id="listByPage" resultType="com.edwardy.po.BigLottoHistory">
+        select * from big_lotto_history limit #{0},#{1}
+    </select>
+    <resultMap id="BigLottoHistory" type="com.edwardy.po.BigLottoHistory">
+        <id property="id" column="id" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="red1" column="red1" javaType="Integer" jdbcType="INTEGER" />
+        <result property="red2" column="red2" javaType="Integer" jdbcType="INTEGER"  />
+        <result property="red3" column="red3" javaType="Integer" jdbcType="INTEGER" />
+        <result property="red4" column="red4" javaType="Integer" jdbcType="INTEGER"  />
+        <result property="red5" column="red5" javaType="Integer" jdbcType="INTEGER"  />
+        <result property="blue1" column="blue1" javaType="Integer" jdbcType="INTEGER" />
+        <result property="blue2" column="blue2" javaType="Integer" jdbcType="INTEGER" />
+        <result property="openTime" column="open_time" javaType="String" jdbcType="VARCHAR" />
+        <result property="period" column="period" javaType="Integer" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="getCount" resultType="int">
+        select count(*) from big_lotto_history
+    </select>
+
+</mapper>

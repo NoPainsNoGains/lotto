@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Big Lotto</title>
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+    <script type="text/javascript" src="../easyui/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <script>
+        $(function() {
+            $('#bigLottoTable').datagrid({
+                iconCls : 'icon-save',
+                width : $(this).width(),
+                height : $(this).height()*0.95,
+                nowrap : false,
+                striped : true,
+                collapsible : true,
+                url : 'listByPage.action',
+                sortName : 'code',
+                sortOrder : 'desc',
+                remoteSort : false,
+                idField : 'wid',
+                frozenColumns : [ [
+                    {field : 'ck',checkbox : true},
+                    {title : '序号',field : 'id'}
+                ] ],
+                columns : [ [
+                    {title : '详细信息',colspan : 9}
+                ], [
+                    {field : 'periods',title : '期数',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'openTime',title : '时间',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'red1',title : '红色球1',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'red2',title : '红色球1',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'red3',title : '红色球1',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'red4',title : '红色球1',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'red5',title : '红色球1',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'blue1',title : '蓝色球1',align : 'center',width : $(this).width() * 0.1},
+                    {field : 'blue2',title : '蓝色球2',align : 'center',width : $(this).width() * 0.1}
+                ]],
+                pagination : true,
+                rownumbers : true,
+                onLoadSuccess: function()
+                {
+                    $('#bigLottoTable').css('display','block');
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<table id="bigLottoTable" ></table>
+</body>
+</html>
+
